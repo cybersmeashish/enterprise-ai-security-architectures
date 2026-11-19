@@ -1,5 +1,7 @@
 # Enterprise AI Security Architectures
 
+[![Verify Enterprise AI Gateway](https://github.com/cybersmeashish/enterprise-ai-security-architectures/actions/workflows/verify.yml/badge.svg)](https://github.com/cybersmeashish/enterprise-ai-security-architectures/actions/workflows/verify.yml)
+
 **Security and governance engineering for enterprise AI, from the request boundary to the operating model.**
 
 By [Ashish Srivastava](https://github.com/cybersmeashish) · First product: **Enterprise AI Gateway v0.1.0**
