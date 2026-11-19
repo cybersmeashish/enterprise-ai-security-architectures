@@ -1,4 +1,4 @@
-# Connected preparation, 2026-11-18. Hashes from exact-version PyPI JSON.
+# Exact-version PyPI hashes reverified for this product on 2026-11-19.
 # Includes platform wheels; pip chooses a supported binary for this environment.
 cryptography==50.0.2 \
     --hash=sha256:0ddc924c04591c2811ca024d62ecad4f7f6f08af8939c211438f48a16bd23602 \

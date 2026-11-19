@@ -92,6 +92,6 @@ test_same_person_cannot_approve_exception (test_governance.GovernanceCases.test_
 test_unregistered_governance_model_denied (test_governance.GovernanceCases.test_unregistered_governance_model_denied) ... ok
 
 ----------------------------------------------------------------------
-Ran 92 tests in 9.118s
+Ran 92 tests in 9.044s
 
 OK

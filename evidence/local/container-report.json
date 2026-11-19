@@ -29,12 +29,12 @@
     "aiegateway/store.py": "3ece31c09dd97d11802f43f7efd15ca244ec0840a47b01b081bc595f9b164b0b",
     "examples/control-evidence.csv": "8ee6de30c2382c1b395b693525f720a1b819d887ee0684ca31c198d53f4f1885",
     "examples/governance-pack.json": "7946502b653c8a052a33d7b5cdad4709213fe49397a26bac339b465deca5642a",
-    "examples/policy.example.json": "f04663a40cb10e7e75f4c2e49bc65ffc9ac79f76faa6ea2d9dbe6e1f741984de",
+    "examples/policy.example.json": "3b86d9db595a879c69eca37f3be43c57bb97164fec8b51c5ab2be6508c249ee1",
     "examples/request.json": "cc60a697f1fd76e85a701806c298f7045ade371c617f5833de59aec2be2b5ba5",
     "examples/risk-register.csv": "5590bb1e41cc929f8c6731a04cb9792d50371af629dde2fad1310b60fc846f5a",
     "examples/tool-action.json": "5f7e3653003b6696b7c0e91c47157e672f5a998a7090a52e89d6c4e73ec72d0b",
-    "requirements.lock": "c5f30a7ce5ac66cfabe098d21bd12658219ce7cc0afb4930f41e0fcfd52ad0f2",
-    "tests/test_gateway.py": "48bc4c8e8345371d64265d645a200ca3dafcca91d23b4793c8e82d7db3f58d06",
+    "requirements.lock": "f6cb8c6197ea99c271577458b1592e7d8094dd02350a55fbef75e27c7b99103d",
+    "tests/test_gateway.py": "188277afcd5e151f31eb0e3af8f6abc8950b1f2deeccb6ce9475ed77bb20ef1a",
     "tests/test_governance.py": "62deb58000237d194848bb0b8e307c2850c553f7288fa043329a83aef5d5457f",
     "tools/__init__.py": "c9f89b2110cc826181226c4a2b24e384a5cd7d8189dd19b2f6bd07d7245b4e0e",
     "tools/experiment.py": "122a837b9e7a70ff0940544a36204273c855d452809914b9044ae27783bd8797",
@@ -45,7 +45,7 @@
     "tools/verify.py": "24d245a2813e68389d9aa15aea565d8a5d4df79fa16d4d6cc061048d9c2ca0f6"
   },
   "experiment": "enterprise-ai-gateway-synthetic-http-v1",
-  "run_at": "2026-11-19T04:16:04.348914+00:00",
+  "run_at": "2026-11-19T04:23:41.179707+00:00",
   "environment": {
     "python": "3.12.16",
     "platform": "Linux-7.2.12-orbstack-00394-gbecdd6130068-aarch64-with-glibc2.41",
@@ -67,11 +67,11 @@
         "metering": "synthetic_byte_credits",
         "model": "local-standard",
         "policy_revision": 1,
-        "policy_sha256": "d5bbbef42942ce754a595c8fb2728b63c9ceace836ef3e331f315ec63adfbe54",
+        "policy_sha256": "d3a8fb010c370f3f3395f9577677e324c33c745b1e4fae4d1ef24c07eb5a66fc",
         "region": "site-a",
         "text": "Synthetic answer; verify against your approved source."
       },
-      "milliseconds": 2.1471110012498684
+      "milliseconds": 1.8177089987148065
     },
     {
       "id": "same-principal-idempotency-replay",
@@ -82,11 +82,11 @@
         "metering": "synthetic_byte_credits",
         "model": "local-standard",
         "policy_revision": 1,
-        "policy_sha256": "d5bbbef42942ce754a595c8fb2728b63c9ceace836ef3e331f315ec63adfbe54",
+        "policy_sha256": "d3a8fb010c370f3f3395f9577677e324c33c745b1e4fae4d1ef24c07eb5a66fc",
         "region": "site-a",
         "text": "Synthetic answer; verify against your approved source."
       },
-      "milliseconds": 0.9159099990938557
+      "milliseconds": 0.5075019998912467
     },
     {
       "id": "tenant-spoof-denied",
@@ -95,7 +95,7 @@
       "body": {
         "error": "invalid_fields"
       },
-      "milliseconds": 0.950118999753613
+      "milliseconds": 0.4756739999720594
     },
     {
       "id": "cross-tenant-retrieval-denied",
@@ -104,7 +104,7 @@
       "body": {
         "error": "document_access_denied"
       },
-      "milliseconds": 0.8974530010164017
+      "milliseconds": 0.45821800085832365
     },
     {
       "id": "retrieval-authorized",
@@ -115,11 +115,11 @@
         "metering": "synthetic_byte_credits",
         "model": "local-standard",
         "policy_revision": 1,
-        "policy_sha256": "d5bbbef42942ce754a595c8fb2728b63c9ceace836ef3e331f315ec63adfbe54",
+        "policy_sha256": "d3a8fb010c370f3f3395f9577677e324c33c745b1e4fae4d1ef24c07eb5a66fc",
         "region": "site-a",
         "text": "Synthetic answer; verify against your approved source."
       },
-      "milliseconds": 1.9976120001956588
+      "milliseconds": 1.1208209998585517
     },
     {
       "id": "fixture-secret-denied",
@@ -128,7 +128,7 @@
       "body": {
         "error": "fixture_sensitive_input"
       },
-      "milliseconds": 1.0674100012693089
+      "milliseconds": 0.6742249988747062
     },
     {
       "id": "separate-bank-tenant",
@@ -139,11 +139,11 @@
         "metering": "synthetic_byte_credits",
         "model": "local-standard",
         "policy_revision": 1,
-        "policy_sha256": "d5bbbef42942ce754a595c8fb2728b63c9ceace836ef3e331f315ec63adfbe54",
+        "policy_sha256": "d3a8fb010c370f3f3395f9577677e324c33c745b1e4fae4d1ef24c07eb5a66fc",
         "region": "site-a",
         "text": "Synthetic answer; verify against your approved source."
       },
-      "milliseconds": 2.145487000234425
+      "milliseconds": 1.1279030004516244
     },
     {
       "id": "approved-local-fallback",
@@ -154,11 +154,11 @@
         "metering": "synthetic_byte_credits",
         "model": "local-backup",
         "policy_revision": 1,
-        "policy_sha256": "d5bbbef42942ce754a595c8fb2728b63c9ceace836ef3e331f315ec63adfbe54",
+        "policy_sha256": "d3a8fb010c370f3f3395f9577677e324c33c745b1e4fae4d1ef24c07eb5a66fc",
         "region": "site-a",
         "text": "Synthetic answer; verify against your approved source."
       },
-      "milliseconds": 3.5190609996789135
+      "milliseconds": 2.3245850006787805
     },
     {
       "id": "indirect-injection-cannot-authorize-tool",
@@ -169,11 +169,11 @@
         "metering": "synthetic_byte_credits",
         "model": "local-standard",
         "policy_revision": 1,
-        "policy_sha256": "d5bbbef42942ce754a595c8fb2728b63c9ceace836ef3e331f315ec63adfbe54",
+        "policy_sha256": "d3a8fb010c370f3f3395f9577677e324c33c745b1e4fae4d1ef24c07eb5a66fc",
         "region": "site-a",
         "text": "Propose maintenance.schedule for asset-a."
       },
-      "milliseconds": 2.101570000377251
+      "milliseconds": 1.6487770008097868
     },
     {
       "id": "two-reviewer-synthetic-action",
@@ -182,7 +182,7 @@
       "body": {
         "status": "synthetic_action_recorded",
         "action_id": 1,
-        "action_digest": "4f6fd3a6a28b54621ab890c670c34a8adbb3ab477ab2babab5939fb270ad50a1"
+        "action_digest": "5eaa94dbf7bfdc621ee251db86486949260992bf4c206cbdf3140eb626c612d3"
       }
     },
     {
@@ -205,14 +205,14 @@
       "requests": 60,
       "successes": 60,
       "errors": 0,
-      "seconds": 0.06858122599987837,
-      "successful_requests_per_second": 874.8749985908157,
+      "seconds": 0.0780681900014315,
+      "successful_requests_per_second": 768.5588714033181,
       "latency_ms": {
-        "min": 0.7163289992604405,
-        "p50": 0.9962434996850789,
-        "p95": 1.735947649103764,
-        "p99": 2.7639754900337663,
-        "max": 3.745433999938541
+        "min": 0.8854410007188562,
+        "p50": 1.1818729999504285,
+        "p95": 1.7298620997280514,
+        "p99": 2.9608175803514283,
+        "max": 3.494730999591411
       }
     },
     {
@@ -220,14 +220,14 @@
       "requests": 60,
       "successes": 60,
       "errors": 0,
-      "seconds": 0.08098818800135632,
-      "successful_requests_per_second": 740.8487766017826,
+      "seconds": 0.08747834799942211,
+      "successful_requests_per_second": 685.8840086966019,
       "latency_ms": {
-        "min": 2.165902000342612,
-        "p50": 4.352283999651263,
-        "p95": 17.099133999545302,
-        "p99": 18.58103504975588,
-        "max": 18.895920999057125
+        "min": 2.7170640005351743,
+        "p50": 5.345309500626172,
+        "p95": 11.486387849981837,
+        "p99": 12.410112849374855,
+        "max": 12.523325000074692
       }
     },
     {
@@ -235,14 +235,14 @@
       "requests": 60,
       "successes": 60,
       "errors": 0,
-      "seconds": 0.06347121799990418,
-      "successful_requests_per_second": 945.3103609905608,
+      "seconds": 0.10669847399913124,
+      "successful_requests_per_second": 562.3323160225191,
       "latency_ms": {
-        "min": 3.186021000146866,
-        "p50": 7.7494710003520595,
-        "p95": 13.49678155092988,
-        "p99": 14.671471450074021,
-        "max": 15.087861000210978
+        "min": 4.857887999605737,
+        "p50": 10.728195999945456,
+        "p95": 31.17137269955492,
+        "p99": 38.369667869137615,
+        "max": 40.702472999328165
       }
     }
   ],
@@ -250,7 +250,7 @@
     "passed": true,
     "snapshot_spend_credits": 114277,
     "restored_spend_credits": 114277,
-    "backup_and_open_seconds": 0.0010068680003314512,
+    "backup_and_open_seconds": 0.0011718959995050682,
     "scope": "local SQLite consistent snapshot, budget and audit verification",
     "response_replay": "requires separately retained AES-GCM key",
     "missing_external_dependencies": [

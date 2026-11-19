@@ -23,7 +23,7 @@ ACTION = {"use_case": "site-maintenance", "tool": "maintenance.schedule",
 
 class Clock:
     def __init__(self):
-        self.now = 1805529600
+        self.now = 1795046400  # Fixed synthetic clock: 2026-11-19 00:00 UTC.
     def __call__(self):
         return self.now
 

@@ -12,6 +12,8 @@ python3.12 -m venv .venv
 
 The demo starts three loopback provider fixtures, admits a freshly signed policy and runs 12 scenarios. Model responses are deterministic strings, not learned-model inference. Credentials and private signing keys are generated for the local run and are not committed.
 
+`policy.example.json` is an unsigned, fixed-clock illustration dated 19 November 2026. It is not loaded as a trusted runtime policy; the demo creates a fresh short-lived policy for your actual local run.
+
 For interactive HTTP use:
 
 ```sh

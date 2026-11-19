@@ -6,12 +6,12 @@ These results measure the complete fixture path, including gateway, provider fix
 
 | Environment | Concurrency | Success/sample | Successful requests/s | p50 ms | p95 ms | p99 ms |
 |---|---|---|---|---|---|---|
-| host | 1 | 60/60 | 161.08 | 6.00 | 7.53 | 8.80 |
-| host | 4 | 60/60 | 213.69 | 18.18 | 22.76 | 25.77 |
-| host | 8 | 60/60 | 203.92 | 36.20 | 54.76 | 57.74 |
-| container | 1 | 60/60 | 874.87 | 1.00 | 1.74 | 2.76 |
-| container | 4 | 60/60 | 740.85 | 4.35 | 17.10 | 18.58 |
-| container | 8 | 60/60 | 945.31 | 7.75 | 13.50 | 14.67 |
+| host | 1 | 60/60 | 83.94 | 11.39 | 20.30 | 25.22 |
+| host | 4 | 60/60 | 101.76 | 36.12 | 72.54 | 90.21 |
+| host | 8 | 60/60 | 121.73 | 65.35 | 89.18 | 92.02 |
+| container | 1 | 60/60 | 768.56 | 1.18 | 1.73 | 2.96 |
+| container | 4 | 60/60 | 685.88 | 5.35 | 11.49 | 12.41 |
+| container | 8 | 60/60 | 562.33 | 10.73 | 31.17 | 38.37 |
 
 Percentiles use linear interpolation across the observed sample. Each cohort is short, has no real-model latency and cannot establish a stable production percentile.
 
