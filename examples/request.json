@@ -1,0 +1,5 @@
+{
+  "use_case": "knowledge-assistant",
+  "prompt": "Summarize the approved procedure.",
+  "max_output_bytes": 256
+}

@@ -1,0 +1,448 @@
+{
+  "stage": "synthetic_reference",
+  "use_cases": [
+    {
+      "id": "knowledge-assistant",
+      "owner": "synthetic-government-service-owner",
+      "purpose": "Summarize authorized local procedure",
+      "prohibited_uses": "Eligibility decisions, citizen scoring, disclosure of protected records",
+      "classification": "internal",
+      "permitted_regions": "site-a",
+      "models": [
+        "local-standard",
+        "local-backup"
+      ],
+      "human_oversight": "A person checks source and answer before using it",
+      "retention": "No prompt audit; encrypted response replay has a 30-second logical TTL; deletion is opportunistic",
+      "risk_review": "Synthetic example only; production approval is required",
+      "evaluation_ref": "tests/test_gateway.py",
+      "status": "synthetic-example"
+    },
+    {
+      "id": "site-maintenance",
+      "owner": "synthetic-energy-site-owner",
+      "purpose": "Propose a scheduled maintenance window",
+      "prohibited_uses": "OT actuation, emergency shutdown, financial transactions",
+      "classification": "confidential",
+      "permitted_regions": "site-a",
+      "models": [
+        "local-standard",
+        "local-backup"
+      ],
+      "human_oversight": "Two independent reviewers approve exact synthetic action",
+      "retention": "No prompt audit; encrypted response replay has a 30-second logical TTL; deletion is opportunistic",
+      "risk_review": "Synthetic example only; production approval is required",
+      "evaluation_ref": "tests/test_gateway.py",
+      "status": "synthetic-example"
+    }
+  ],
+  "models": [
+    {
+      "id": "local-standard",
+      "owner": "synthetic-platform-owner",
+      "supplier": "local deterministic fixture",
+      "version": "synthetic-v1",
+      "location_declaration": "site-a",
+      "intended_use": "Exercise routing and failure contracts; no learned-model task quality",
+      "evaluation_ref": "tests/test_gateway.py",
+      "exit_plan": "Replace fixture via a separately tested adapter",
+      "status": "synthetic-example"
+    },
+    {
+      "id": "local-backup",
+      "owner": "synthetic-platform-owner",
+      "supplier": "local deterministic fixture",
+      "version": "synthetic-v1",
+      "location_declaration": "site-a",
+      "intended_use": "Exercise routing and failure contracts; no learned-model task quality",
+      "evaluation_ref": "tests/test_gateway.py",
+      "exit_plan": "Replace fixture via a separately tested adapter",
+      "status": "synthetic-example"
+    },
+    {
+      "id": "external-cheap",
+      "owner": "synthetic-platform-owner",
+      "supplier": "local deterministic fixture",
+      "version": "synthetic-v1",
+      "location_declaration": "external",
+      "intended_use": "Exercise routing and failure contracts; no learned-model task quality",
+      "evaluation_ref": "tests/test_gateway.py",
+      "exit_plan": "Replace fixture via a separately tested adapter",
+      "status": "synthetic-example"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R01",
+      "scenario": "Indirect prompt injection in retrieved text",
+      "owner": "security-owner",
+      "control": "C03 C13",
+      "residual_risk": "The model can still follow malicious text; authority is kept outside it.",
+      "next_gate": "Evaluate learned models and multilingual attack sets."
+    },
+    {
+      "id": "R02",
+      "scenario": "Cross-tenant data retrieval",
+      "owner": "data-owner",
+      "control": "C02 C03",
+      "residual_risk": "Real index/document stores are outside this fixture.",
+      "next_gate": "Integrate resource ACLs and verify reindex/deletion paths."
+    },
+    {
+      "id": "R03",
+      "scenario": "Use of unapproved or retired model",
+      "owner": "model-owner",
+      "control": "C05 C06",
+      "residual_risk": "Synthetic approval metadata lacks real review.",
+      "next_gate": "Complete model card, supplier and quality gates."
+    },
+    {
+      "id": "R04",
+      "scenario": "Cheap fallback outside permitted location",
+      "owner": "sre-owner",
+      "control": "C08 C19",
+      "residual_risk": "Declared location is not observed placement.",
+      "next_gate": "Verify provider data path, support, logs and backups."
+    },
+    {
+      "id": "R05",
+      "scenario": "Sensitive input or output leakage",
+      "owner": "privacy-owner",
+      "control": "C07 C18",
+      "residual_risk": "Obfuscated email bypasses the fixture.",
+      "next_gate": "Calibrate DLP with labelled datasets and privacy owners."
+    },
+    {
+      "id": "R06",
+      "scenario": "User token forwarded to provider",
+      "owner": "identity-owner",
+      "control": "C15",
+      "residual_risk": "No real OAuth federation or token exchange.",
+      "next_gate": "Integrate audience-bound credentials and rotation."
+    },
+    {
+      "id": "R07",
+      "scenario": "Unauthorized high-impact tool execution",
+      "owner": "security-owner",
+      "control": "C13 C14",
+      "residual_risk": "Only synthetic scheduling is exercised.",
+      "next_gate": "Use a downstream authority and a human review interface."
+    },
+    {
+      "id": "R08",
+      "scenario": "Approval replay or changed parameters",
+      "owner": "security-owner",
+      "control": "C13 C14",
+      "residual_risk": "Reviewer revocation after issuance is not a grant-revocation system.",
+      "next_gate": "Implement durable reviewer grant revocation."
+    },
+    {
+      "id": "R09",
+      "scenario": "Provider outage with cost amplification",
+      "owner": "finops-owner",
+      "control": "C09 C19",
+      "residual_risk": "Reservation accounting is intentionally conservative.",
+      "next_gate": "Reconcile provider billing and ambiguous outcomes."
+    },
+    {
+      "id": "R10",
+      "scenario": "Concurrent quota bypass",
+      "owner": "platform-owner",
+      "control": "C09 C10",
+      "residual_risk": "Single-node SQLite does not validate distributed HA.",
+      "next_gate": "Prove cross-region reservation invariants."
+    },
+    {
+      "id": "R11",
+      "scenario": "Idempotency response leakage",
+      "owner": "privacy-owner",
+      "control": "C11 C12",
+      "residual_risk": "Ephemeral key loss prevents response replay.",
+      "next_gate": "Integrate KMS, key backup and scoped key rotation."
+    },
+    {
+      "id": "R12",
+      "scenario": "Audit tampering or truncation",
+      "owner": "evidence-owner",
+      "control": "C17",
+      "residual_risk": "A privileged party can recompute or truncate the chain.",
+      "next_gate": "Anchor checkpoints outside the gateway trust domain."
+    },
+    {
+      "id": "R13",
+      "scenario": "Telemetry exposure",
+      "owner": "privacy-owner",
+      "control": "C18",
+      "residual_risk": "Identifiers are still potentially sensitive metadata.",
+      "next_gate": "Implement access policy, retention jobs and deletion evidence."
+    },
+    {
+      "id": "R14",
+      "scenario": "SSRF through remote provider selection",
+      "owner": "security-owner",
+      "control": "C16",
+      "residual_risk": "Remote transport is deliberately unsupported.",
+      "next_gate": "Pin destinations, certificates, DNS and private endpoint identity."
+    },
+    {
+      "id": "R15",
+      "scenario": "Training, retrieval or model data poisoning",
+      "owner": "model-owner",
+      "control": "C03 C06",
+      "residual_risk": "No training or ingestion pipeline is included.",
+      "next_gate": "Verify ingestion provenance, quarantine and reproducible evaluations."
+    },
+    {
+      "id": "R16",
+      "scenario": "Misinformation or unsafe recommendations",
+      "owner": "governance-owner",
+      "control": "C05",
+      "residual_risk": "Deterministic fixtures cannot establish quality.",
+      "next_gate": "Conduct source-grounded human evaluation per use case."
+    },
+    {
+      "id": "R17",
+      "scenario": "Unfair decisions across populations",
+      "owner": "governance-owner",
+      "control": "C05",
+      "residual_risk": "Fairness is not measured in synthetic transport tests.",
+      "next_gate": "Approve representative cohorts and accountable human oversight."
+    },
+    {
+      "id": "R18",
+      "scenario": "Software or model supply-chain compromise",
+      "owner": "platform-owner",
+      "control": "C04 C06",
+      "residual_risk": "Pinned hashes are not a SLSA assurance level.",
+      "next_gate": "Add provenance verification, SBOM and independent vulnerability review."
+    },
+    {
+      "id": "R19",
+      "scenario": "System prompt mistaken for a secret store",
+      "owner": "security-owner",
+      "control": "C07",
+      "residual_risk": "No hidden system prompt is protected by this product.",
+      "next_gate": "Keep authorization and secrets outside model context."
+    },
+    {
+      "id": "R20",
+      "scenario": "Policy rollback after restoring state",
+      "owner": "governance-owner",
+      "control": "C04 C20",
+      "residual_risk": "Restoring an older entire store can restore its watermark.",
+      "next_gate": "Persist trusted revision checkpoint independently."
+    },
+    {
+      "id": "R21",
+      "scenario": "Multimodal, embedding or reranking bypass",
+      "owner": "platform-owner",
+      "control": "C06",
+      "residual_risk": "Text-only API; these modalities are unsupported.",
+      "next_gate": "Create explicit contracts and media threat tests."
+    },
+    {
+      "id": "R22",
+      "scenario": "Agent delegation and inter-agent trust",
+      "owner": "identity-owner",
+      "control": "C13 C15",
+      "residual_risk": "No MCP/A2A conformance implementation.",
+      "next_gate": "Review protocols, delegation audiences and task expiry."
+    },
+    {
+      "id": "R23",
+      "scenario": "Resource exhaustion at ingress or database",
+      "owner": "sre-owner",
+      "control": "C09 C10",
+      "residual_risk": "Local caps are not enterprise abuse resistance.",
+      "next_gate": "Load/fault test ingress, queues, state volume and disk exhaustion."
+    },
+    {
+      "id": "R24",
+      "scenario": "Unowned exceptions and regulatory assumptions",
+      "owner": "governance-owner",
+      "control": "C05",
+      "residual_risk": "Record validation cannot establish legal applicability.",
+      "next_gate": "Assign jurisdiction-specific counsel and expiry review."
+    },
+    {
+      "id": "R25",
+      "scenario": "Cryptographic transition breaks stored evidence",
+      "owner": "crypto-owner",
+      "control": "C04 C12",
+      "residual_risk": "Ed25519 is classical; no PQ gateway transport.",
+      "next_gate": "Inventory signature, key-establishment and archival dependencies."
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "EX-SAMPLE-01",
+      "owner": "synthetic-platform-owner",
+      "approver": "synthetic-security-reviewer",
+      "expires": "2027-01-01",
+      "scope": "Loopback-only HTTP in the synthetic isolated demonstration",
+      "compensating_control": "No external network; no real data; no remote production use"
+    }
+  ],
+  "control_evidence": [
+    {
+      "id": "C01",
+      "owner": "identity-owner",
+      "artifact": "aiegateway/identity.py",
+      "test": "test_revoked_identity_cannot_replay_cached_result",
+      "gap": "Production issuer, audience, federation and MFA integration are design work."
+    },
+    {
+      "id": "C02",
+      "owner": "platform-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_client_tenant_spoof_is_rejected",
+      "gap": "Local server-side identity only; validate real identity claims in an IdP integration."
+    },
+    {
+      "id": "C03",
+      "owner": "data-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_cross_tenant_retrieval_denied",
+      "gap": "Synthetic documents; real vector stores must enforce resource ACLs independently."
+    },
+    {
+      "id": "C04",
+      "owner": "governance-owner",
+      "artifact": "aiegateway/policy.py",
+      "test": "test_altered_signed_policy_denied",
+      "gap": "Demo ephemeral Ed25519 signer; protected signer and independent production trust distribution needed."
+    },
+    {
+      "id": "C05",
+      "owner": "governance-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_expired_use_case_review_denied",
+      "gap": "Review fields are synthetic; no actual business approval is claimed."
+    },
+    {
+      "id": "C06",
+      "owner": "model-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_expired_model_reviews_denied",
+      "gap": "Registry location is declared; inference placement and supplier terms remain unverified."
+    },
+    {
+      "id": "C07",
+      "owner": "privacy-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_sensitive_output_denied_without_fallback",
+      "gap": "Regex fixtures miss many PII formats and do not prove injection resistance."
+    },
+    {
+      "id": "C08",
+      "owner": "sre-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_outage_does_not_escape_region",
+      "gap": "Declared synthetic regions; no cloud failover or location attestation tested."
+    },
+    {
+      "id": "C09",
+      "owner": "finops-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_concurrent_budget_reservation_is_atomic",
+      "gap": "Demo byte credits, not real billing; HA transactional state remains design work."
+    },
+    {
+      "id": "C10",
+      "owner": "sre-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_rate_limit_persists_per_tenant",
+      "gap": "Counts provider attempts per tenant; ingress abuse needs an upstream limiter."
+    },
+    {
+      "id": "C11",
+      "owner": "platform-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_idempotency_cache_is_subject_scoped",
+      "gap": "Thirty-second response replay, no semantic cache or distributed request leases."
+    },
+    {
+      "id": "C12",
+      "owner": "crypto-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_backup_restore_requires_separate_response_key",
+      "gap": "Only completion replay records are encrypted; audit/state and backup require additional storage protection."
+    },
+    {
+      "id": "C13",
+      "owner": "security-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_two_independent_approvals_execute_synthetic_action",
+      "gap": "Synthetic scheduling only; real downstream service authorization and human UI are not implemented."
+    },
+    {
+      "id": "C14",
+      "owner": "security-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_approval_replay_denied",
+      "gap": "Approval handles survive in local state; production revocation of already issued reviewer grants needs design."
+    },
+    {
+      "id": "C15",
+      "owner": "security-owner",
+      "artifact": "aiegateway/adapter.py",
+      "test": "test_client_bearer_is_not_forwarded",
+      "gap": "Loopback fixture adapter, not an MCP implementation or production provider SDK."
+    },
+    {
+      "id": "C16",
+      "owner": "security-owner",
+      "artifact": "aiegateway/adapter.py",
+      "test": "test_arbitrary_network_endpoint_denied",
+      "gap": "Remote provider transport/TLS/private connectivity are not implemented."
+    },
+    {
+      "id": "C17",
+      "owner": "evidence-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_audit_alteration_detected",
+      "gap": "Local chain cannot prove completeness, trusted time, or administrator-proof integrity."
+    },
+    {
+      "id": "C18",
+      "owner": "privacy-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_audit_has_no_prompt_response_or_bearer",
+      "gap": "Tenant and subject metadata still need access control, retention and privacy review."
+    },
+    {
+      "id": "C19",
+      "owner": "sre-owner",
+      "artifact": "aiegateway/engine.py",
+      "test": "test_timeout_falls_back_only_to_eligible_model",
+      "gap": "At most two sequential provider attempts; real provider behavior and streaming are untested."
+    },
+    {
+      "id": "C20",
+      "owner": "governance-owner",
+      "artifact": "aiegateway/store.py",
+      "test": "test_same_policy_revision_cannot_change_digest",
+      "gap": "Watermark is local; rollback across disaster recovery requires a separately preserved trusted checkpoint."
+    }
+  ],
+  "operating_model": {
+    "accountable": "synthetic-AI-product-owner",
+    "security": "synthetic-security-owner",
+    "governance": "synthetic-model-risk-owner",
+    "platform": "synthetic-platform-owner",
+    "sre": "synthetic-SRE-owner",
+    "finops": "synthetic-finance-owner",
+    "review_cadence": "Example: monthly risk review, per-change security and model review",
+    "incident_owner": "synthetic-incident-commander"
+  },
+  "evaluation_plan": {
+    "scope": "Runtime authorization and HTTP failure contracts; text-only synthetic providers",
+    "dataset": "tests/test_gateway.py and tools/experiment.py; generated records contain no customer data",
+    "security_gate": "All boundary tests pass; review residual gaps before a pilot",
+    "quality_gate": "Unmeasured; a use-case-specific learned-model evaluation is mandatory before production",
+    "privacy_gate": "Classify inputs, assess provider terms and retention, test calibrated DLP",
+    "fairness_gate": "Unmeasured; define affected populations, human review and cohort metrics",
+    "reviewer": "Example independent governance and security reviewers; no actual approval implied",
+    "production_gate": "Complete the documented production readiness gate and obtain accountable approval"
+  }
+}

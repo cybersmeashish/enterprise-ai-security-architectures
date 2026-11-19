@@ -1,0 +1,12 @@
+{
+  "title": "Enterprise AI Gateway Architecture",
+  "subtitle": "An Enterprise Guide to Multi-LLM Platforms, Intelligent Model Routing, Security, Governance, Interoperability and Agentic AI",
+  "author": "Dr. Rabi Prasad Padhy",
+  "edition_date": "2026-11-19",
+  "pages": 55,
+  "sha256": "48fb763cbe3c05f020f4c3d39461397c5259d1ef35d63ebe9ef0156805132723",
+  "review_scope": "Architecture, security, governance, operations and agentic sections; key diagrams visually inspected",
+  "usage": "Conceptual reference credited; original code, diagrams, tests and schemas published",
+  "original_redistributed": false,
+  "endorsement_claimed": false
+}

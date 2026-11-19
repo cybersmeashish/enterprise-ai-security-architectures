@@ -1,0 +1,107 @@
+{
+  "site": "lab-site-a",
+  "revision": 1,
+  "issued_at": 1805529599,
+  "expires_at": 1805533200,
+  "owner": "security-governance",
+  "models": {
+    "local-standard": {
+      "region": "site-a",
+      "classes": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ],
+      "state": "approved",
+      "review_expires": 1805533200,
+      "owner": "platform-owner",
+      "credit_per_byte": 2,
+      "endpoint_ref": "provider-a",
+      "evaluation_ref": "fixture-evaluation-v1",
+      "version": "synthetic-v1"
+    },
+    "local-backup": {
+      "region": "site-a",
+      "classes": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted"
+      ],
+      "state": "approved",
+      "review_expires": 1805533200,
+      "owner": "platform-owner",
+      "credit_per_byte": 3,
+      "endpoint_ref": "provider-b",
+      "evaluation_ref": "fixture-evaluation-v1",
+      "version": "synthetic-v1"
+    },
+    "external-cheap": {
+      "region": "external",
+      "classes": [
+        "public"
+      ],
+      "state": "approved",
+      "review_expires": 1805533200,
+      "owner": "platform-owner",
+      "credit_per_byte": 1,
+      "endpoint_ref": "provider-c",
+      "evaluation_ref": "fixture-evaluation-v1",
+      "version": "synthetic-v1"
+    }
+  },
+  "use_cases": {
+    "knowledge-assistant": {
+      "owner": "knowledge-owner",
+      "state": "approved",
+      "review_expires": 1805533200,
+      "minimum_classification": "internal",
+      "regions": [
+        "site-a"
+      ],
+      "models": [
+        "local-standard",
+        "local-backup",
+        "external-cheap"
+      ],
+      "tools": [],
+      "max_output_bytes": 1024,
+      "risk": "medium",
+      "evidence_ref": "eval-knowledge-v1"
+    },
+    "site-maintenance": {
+      "owner": "site-owner",
+      "state": "approved",
+      "review_expires": 1805533200,
+      "minimum_classification": "confidential",
+      "regions": [
+        "site-a"
+      ],
+      "models": [
+        "local-standard",
+        "local-backup"
+      ],
+      "tools": [
+        "maintenance.schedule"
+      ],
+      "max_output_bytes": 512,
+      "risk": "high",
+      "evidence_ref": "eval-maintenance-v1"
+    }
+  },
+  "tenants": {
+    "government": {
+      "budget_credits": 100000000,
+      "requests_per_minute": 10000
+    },
+    "bfsi": {
+      "budget_credits": 100000000,
+      "requests_per_minute": 10000
+    },
+    "energy": {
+      "budget_credits": 100000000,
+      "requests_per_minute": 10000
+    }
+  }
+}

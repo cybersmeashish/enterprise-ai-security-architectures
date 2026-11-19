@@ -1,0 +1,8 @@
+{
+  "use_case": "site-maintenance",
+  "tool": "maintenance.schedule",
+  "arguments": {
+    "asset": "asset-a",
+    "window": "day"
+  }
+}

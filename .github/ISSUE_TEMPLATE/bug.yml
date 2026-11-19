@@ -1,0 +1,11 @@
+name: Reference defect
+description: Report a non-confidential reproducible defect.
+title: "[Defect] "
+body:
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Version, expected boundary and synthetic reproducer
+      description: Include the actual result and limitation. Use private security reporting for sensitive findings.
+    validations:
+      required: true

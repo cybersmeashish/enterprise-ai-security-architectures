@@ -1,0 +1,282 @@
+{
+  "version": "0.1.0",
+  "tests": {
+    "run": 92,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "isolation": null,
+  "source_sha256": {
+    "Dockerfile": "be4c7cb20b752943d1dc5b9cf8557f446d4f887be6221fd706a0cf10cdd48d1b",
+    "aiegateway/__init__.py": "41b974a55b897105a9cb2dfac90fe0fa186ccc7535aedc3e4e6071436087878c",
+    "aiegateway/adapter.py": "80e82415aa676e35025fe2f5bbe90add33c220267c41ea159d3108d580fe9f56",
+    "aiegateway/contracts.py": "b9b645937d44a312762db3d7d83e38a3e21d04ca8e3f40d8a6aba39ffd41be6c",
+    "aiegateway/demo.py": "a0c14ccb1790e6b27cb5310ab231df37cf55fb9f6b564c3a17cbe4ee02109c89",
+    "aiegateway/engine.py": "eaa96b3e086e115c6cac1ab45e7063ee5f0ec304d28c772ae221ba1767667ee6",
+    "aiegateway/fixtures.py": "76f1429a2f379103361e299af807aff578fdb4e0ae97975091fcd851e4aa9b85",
+    "aiegateway/http.py": "ae56bf37a09571906891b7e78fcc4c1b86a3a45304d435862b7ff1e8559cc4ee",
+    "aiegateway/identity.py": "2c1f97952b2f15e0cc9d3bca57d5fb64b6c6a6ed313cb77d2c6136204046ee63",
+    "aiegateway/policy.py": "eecc5cd569bc3a2608ad868bd2937f97b1c0eaf0bea0bcb5bc3f605b4382c297",
+    "aiegateway/store.py": "3ece31c09dd97d11802f43f7efd15ca244ec0840a47b01b081bc595f9b164b0b",
+    "examples/control-evidence.csv": "8ee6de30c2382c1b395b693525f720a1b819d887ee0684ca31c198d53f4f1885",
+    "examples/governance-pack.json": "7946502b653c8a052a33d7b5cdad4709213fe49397a26bac339b465deca5642a",
+    "examples/policy.example.json": "f04663a40cb10e7e75f4c2e49bc65ffc9ac79f76faa6ea2d9dbe6e1f741984de",
+    "examples/request.json": "cc60a697f1fd76e85a701806c298f7045ade371c617f5833de59aec2be2b5ba5",
+    "examples/risk-register.csv": "5590bb1e41cc929f8c6731a04cb9792d50371af629dde2fad1310b60fc846f5a",
+    "examples/tool-action.json": "5f7e3653003b6696b7c0e91c47157e672f5a998a7090a52e89d6c4e73ec72d0b",
+    "requirements.lock": "c5f30a7ce5ac66cfabe098d21bd12658219ce7cc0afb4930f41e0fcfd52ad0f2",
+    "tests/test_gateway.py": "48bc4c8e8345371d64265d645a200ca3dafcca91d23b4793c8e82d7db3f58d06",
+    "tests/test_governance.py": "62deb58000237d194848bb0b8e307c2850c553f7288fa043329a83aef5d5457f",
+    "tools/__init__.py": "c9f89b2110cc826181226c4a2b24e384a5cd7d8189dd19b2f6bd07d7245b4e0e",
+    "tools/experiment.py": "122a837b9e7a70ff0940544a36204273c855d452809914b9044ae27783bd8797",
+    "tools/prepare_wheels.py": "c549a41ba52e63fbfc699bd043a0255beb641ff47e45e1bb9eccbe26fae4575c",
+    "tools/run_isolated.py": "2a5324caa8c4337ee7864b577f68f2e6b40c77f50128d3e91a5f0bd76ca03986",
+    "tools/source_manifest.py": "5563dc223e3814463023fffb46e581a061dfe923b2b638cd206830ba4191c571",
+    "tools/validate_governance.py": "6d760a80d5dcc9a08a3b663517dc19e96ce46afd238802606e8356e63c4da5d3",
+    "tools/verify.py": "24d245a2813e68389d9aa15aea565d8a5d4df79fa16d4d6cc061048d9c2ca0f6"
+  },
+  "experiment": "enterprise-ai-gateway-synthetic-http-v1",
+  "run_at": "2026-11-19T04:15:48.502410+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.7.3-arm64-arm-64bit",
+    "machine": "arm64",
+    "logical_cpus": 10,
+    "model": "deterministic loopback fixture; no learned model",
+    "storage": "SQLite in a temporary filesystem directory",
+    "transport": "new loopback HTTP connection per request",
+    "warmup_requests": 5,
+    "sample_count_per_cohort": 60
+  },
+  "scenarios": [
+    {
+      "id": "allowed-local-route",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "attempts": 1,
+        "metering": "synthetic_byte_credits",
+        "model": "local-standard",
+        "policy_revision": 1,
+        "policy_sha256": "6c116bf7f1291ac15f9a4329b8b07c3c3cf4d953cd456e63d9c931d9c813038d",
+        "region": "site-a",
+        "text": "Synthetic answer; verify against your approved source."
+      },
+      "milliseconds": 6.932000018423423
+    },
+    {
+      "id": "same-principal-idempotency-replay",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "attempts": 1,
+        "metering": "synthetic_byte_credits",
+        "model": "local-standard",
+        "policy_revision": 1,
+        "policy_sha256": "6c116bf7f1291ac15f9a4329b8b07c3c3cf4d953cd456e63d9c931d9c813038d",
+        "region": "site-a",
+        "text": "Synthetic answer; verify against your approved source."
+      },
+      "milliseconds": 1.1119999981019646
+    },
+    {
+      "id": "tenant-spoof-denied",
+      "passed": true,
+      "status": 400,
+      "body": {
+        "error": "invalid_fields"
+      },
+      "milliseconds": 2.235749998362735
+    },
+    {
+      "id": "cross-tenant-retrieval-denied",
+      "passed": true,
+      "status": 403,
+      "body": {
+        "error": "document_access_denied"
+      },
+      "milliseconds": 2.621958003146574
+    },
+    {
+      "id": "retrieval-authorized",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "attempts": 1,
+        "metering": "synthetic_byte_credits",
+        "model": "local-standard",
+        "policy_revision": 1,
+        "policy_sha256": "6c116bf7f1291ac15f9a4329b8b07c3c3cf4d953cd456e63d9c931d9c813038d",
+        "region": "site-a",
+        "text": "Synthetic answer; verify against your approved source."
+      },
+      "milliseconds": 6.749666994437575
+    },
+    {
+      "id": "fixture-secret-denied",
+      "passed": true,
+      "status": 403,
+      "body": {
+        "error": "fixture_sensitive_input"
+      },
+      "milliseconds": 1.9955839961767197
+    },
+    {
+      "id": "separate-bank-tenant",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "attempts": 1,
+        "metering": "synthetic_byte_credits",
+        "model": "local-standard",
+        "policy_revision": 1,
+        "policy_sha256": "6c116bf7f1291ac15f9a4329b8b07c3c3cf4d953cd456e63d9c931d9c813038d",
+        "region": "site-a",
+        "text": "Synthetic answer; verify against your approved source."
+      },
+      "milliseconds": 8.825750002870336
+    },
+    {
+      "id": "approved-local-fallback",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "attempts": 2,
+        "metering": "synthetic_byte_credits",
+        "model": "local-backup",
+        "policy_revision": 1,
+        "policy_sha256": "6c116bf7f1291ac15f9a4329b8b07c3c3cf4d953cd456e63d9c931d9c813038d",
+        "region": "site-a",
+        "text": "Synthetic answer; verify against your approved source."
+      },
+      "milliseconds": 10.5303339951206
+    },
+    {
+      "id": "indirect-injection-cannot-authorize-tool",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "attempts": 1,
+        "metering": "synthetic_byte_credits",
+        "model": "local-standard",
+        "policy_revision": 1,
+        "policy_sha256": "6c116bf7f1291ac15f9a4329b8b07c3c3cf4d953cd456e63d9c931d9c813038d",
+        "region": "site-a",
+        "text": "Propose maintenance.schedule for asset-a."
+      },
+      "milliseconds": 8.435541996732354
+    },
+    {
+      "id": "two-reviewer-synthetic-action",
+      "passed": true,
+      "status": 200,
+      "body": {
+        "status": "synthetic_action_recorded",
+        "action_id": 1,
+        "action_digest": "ac6dfda38e0f8635574157cd4ed9a8e76b4f2629eb4f60c967fd681cd665456f"
+      }
+    },
+    {
+      "id": "approval-replay-denied",
+      "passed": true,
+      "status": 403,
+      "body": {
+        "error": "invalid_action_approval"
+      }
+    },
+    {
+      "id": "local-audit-chain-valid",
+      "passed": true,
+      "status": 200
+    }
+  ],
+  "benchmarks": [
+    {
+      "concurrency": 1,
+      "requests": 60,
+      "successes": 60,
+      "errors": 0,
+      "seconds": 0.37249666699790396,
+      "successful_requests_per_second": 161.07526674953476,
+      "latency_ms": {
+        "min": 4.886625014478341,
+        "p50": 6.004624505294487,
+        "p95": 7.534676740760915,
+        "p99": 8.801398417563176,
+        "max": 8.991084003355354
+      }
+    },
+    {
+      "concurrency": 4,
+      "requests": 60,
+      "successes": 60,
+      "errors": 0,
+      "seconds": 0.2807848750089761,
+      "successful_requests_per_second": 213.6867236815442,
+      "latency_ms": {
+        "min": 13.711584004340693,
+        "p50": 18.180541504989378,
+        "p95": 22.761151772283483,
+        "p99": 25.77256249467609,
+        "max": 26.609624997945502
+      }
+    },
+    {
+      "concurrency": 8,
+      "requests": 60,
+      "successes": 60,
+      "errors": 0,
+      "seconds": 0.29423091700300574,
+      "successful_requests_per_second": 203.9214662114759,
+      "latency_ms": {
+        "min": 25.957832986023277,
+        "p50": 36.19524999521673,
+        "p95": 54.75887705688365,
+        "p99": 57.7445570551208,
+        "max": 61.31887499941513
+      }
+    }
+  ],
+  "restoration": {
+    "passed": true,
+    "snapshot_spend_credits": 114277,
+    "restored_spend_credits": 114277,
+    "backup_and_open_seconds": 0.002999292017193511,
+    "scope": "local SQLite consistent snapshot, budget and audit verification",
+    "response_replay": "requires separately retained AES-GCM key",
+    "missing_external_dependencies": [
+      "identity issuer",
+      "provider inventory authority",
+      "external audit checkpoint",
+      "production KMS"
+    ]
+  },
+  "audit_events": 391,
+  "known_gaps": [
+    {
+      "id": "obfuscated-pii",
+      "evidence": "test_obfuscated_email_is_known_gap_in_fixture_detector",
+      "result": "obfuscated email is accepted; regex is not a DLP product"
+    },
+    {
+      "id": "audit-truncation",
+      "evidence": "test_audit_suffix_deletion_is_known_gap_without_external_anchor",
+      "result": "suffix deletion passes local chain verification without an external checkpoint"
+    },
+    {
+      "id": "html-consumer",
+      "evidence": "test_html_output_is_json_data_not_executed",
+      "result": "HTML remains untrusted JSON data; the consuming app must sanitize before rendering"
+    },
+    {
+      "id": "large-scale",
+      "result": "HA, distributed quotas and real inference throughput are unmeasured"
+    }
+  ],
+  "limitations": [
+    "Synthetic byte credits are not provider billing or tokenizer counts.",
+    "Microbenchmarks include fixture provider and SQLite overhead.",
+    "No task-quality, fairness, factuality, production SLA or enterprise-capacity claim."
+  ]
+}

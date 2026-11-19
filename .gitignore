@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite*
+.runtime/
+vendor/
+evidence/ci/
+*.pem
+*.key
+.DS_Store

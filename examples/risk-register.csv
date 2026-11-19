@@ -1,0 +1,26 @@
+risk,scenario,owner_role,controls,residual_risk,next_gate
+R01,Indirect prompt injection in retrieved text,security-owner,C03 C13,The model can still follow malicious text; authority is kept outside it.,Evaluate learned models and multilingual attack sets.
+R02,Cross-tenant data retrieval,data-owner,C02 C03,Real index/document stores are outside this fixture.,Integrate resource ACLs and verify reindex/deletion paths.
+R03,Use of unapproved or retired model,model-owner,C05 C06,Synthetic approval metadata lacks real review.,"Complete model card, supplier and quality gates."
+R04,Cheap fallback outside permitted location,sre-owner,C08 C19,Declared location is not observed placement.,"Verify provider data path, support, logs and backups."
+R05,Sensitive input or output leakage,privacy-owner,C07 C18,Obfuscated email bypasses the fixture.,Calibrate DLP with labelled datasets and privacy owners.
+R06,User token forwarded to provider,identity-owner,C15,No real OAuth federation or token exchange.,Integrate audience-bound credentials and rotation.
+R07,Unauthorized high-impact tool execution,security-owner,C13 C14,Only synthetic scheduling is exercised.,Use a downstream authority and a human review interface.
+R08,Approval replay or changed parameters,security-owner,C13 C14,Reviewer revocation after issuance is not a grant-revocation system.,Implement durable reviewer grant revocation.
+R09,Provider outage with cost amplification,finops-owner,C09 C19,Reservation accounting is intentionally conservative.,Reconcile provider billing and ambiguous outcomes.
+R10,Concurrent quota bypass,platform-owner,C09 C10,Single-node SQLite does not validate distributed HA.,Prove cross-region reservation invariants.
+R11,Idempotency response leakage,privacy-owner,C11 C12,Ephemeral key loss prevents response replay.,"Integrate KMS, key backup and scoped key rotation."
+R12,Audit tampering or truncation,evidence-owner,C17,A privileged party can recompute or truncate the chain.,Anchor checkpoints outside the gateway trust domain.
+R13,Telemetry exposure,privacy-owner,C18,Identifiers are still potentially sensitive metadata.,"Implement access policy, retention jobs and deletion evidence."
+R14,SSRF through remote provider selection,security-owner,C16,Remote transport is deliberately unsupported.,"Pin destinations, certificates, DNS and private endpoint identity."
+R15,"Training, retrieval or model data poisoning",model-owner,C03 C06,No training or ingestion pipeline is included.,"Verify ingestion provenance, quarantine and reproducible evaluations."
+R16,Misinformation or unsafe recommendations,governance-owner,C05,Deterministic fixtures cannot establish quality.,Conduct source-grounded human evaluation per use case.
+R17,Unfair decisions across populations,governance-owner,C05,Fairness is not measured in synthetic transport tests.,Approve representative cohorts and accountable human oversight.
+R18,Software or model supply-chain compromise,platform-owner,C04 C06,Pinned hashes are not a SLSA assurance level.,"Add provenance verification, SBOM and independent vulnerability review."
+R19,System prompt mistaken for a secret store,security-owner,C07,No hidden system prompt is protected by this product.,Keep authorization and secrets outside model context.
+R20,Policy rollback after restoring state,governance-owner,C04 C20,Restoring an older entire store can restore its watermark.,Persist trusted revision checkpoint independently.
+R21,"Multimodal, embedding or reranking bypass",platform-owner,C06,Text-only API; these modalities are unsupported.,Create explicit contracts and media threat tests.
+R22,Agent delegation and inter-agent trust,identity-owner,C13 C15,No MCP/A2A conformance implementation.,"Review protocols, delegation audiences and task expiry."
+R23,Resource exhaustion at ingress or database,sre-owner,C09 C10,Local caps are not enterprise abuse resistance.,"Load/fault test ingress, queues, state volume and disk exhaustion."
+R24,Unowned exceptions and regulatory assumptions,governance-owner,C05,Record validation cannot establish legal applicability.,Assign jurisdiction-specific counsel and expiry review.
+R25,Cryptographic transition breaks stored evidence,crypto-owner,C04 C12,Ed25519 is classical; no PQ gateway transport.,"Inventory signature, key-establishment and archival dependencies."

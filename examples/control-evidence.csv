@@ -1,0 +1,21 @@
+control,owner_role,implementation,regression_test,remaining_gap
+C01,identity-owner,aiegateway/identity.py,test_revoked_identity_cannot_replay_cached_result,"Production issuer, audience, federation and MFA integration are design work."
+C02,platform-owner,aiegateway/engine.py,test_client_tenant_spoof_is_rejected,Local server-side identity only; validate real identity claims in an IdP integration.
+C03,data-owner,aiegateway/engine.py,test_cross_tenant_retrieval_denied,Synthetic documents; real vector stores must enforce resource ACLs independently.
+C04,governance-owner,aiegateway/policy.py,test_altered_signed_policy_denied,Demo ephemeral Ed25519 signer; protected signer and independent production trust distribution needed.
+C05,governance-owner,aiegateway/engine.py,test_expired_use_case_review_denied,Review fields are synthetic; no actual business approval is claimed.
+C06,model-owner,aiegateway/engine.py,test_expired_model_reviews_denied,Registry location is declared; inference placement and supplier terms remain unverified.
+C07,privacy-owner,aiegateway/engine.py,test_sensitive_output_denied_without_fallback,Regex fixtures miss many PII formats and do not prove injection resistance.
+C08,sre-owner,aiegateway/engine.py,test_outage_does_not_escape_region,Declared synthetic regions; no cloud failover or location attestation tested.
+C09,finops-owner,aiegateway/store.py,test_concurrent_budget_reservation_is_atomic,"Demo byte credits, not real billing; HA transactional state remains design work."
+C10,sre-owner,aiegateway/store.py,test_rate_limit_persists_per_tenant,Counts provider attempts per tenant; ingress abuse needs an upstream limiter.
+C11,platform-owner,aiegateway/store.py,test_idempotency_cache_is_subject_scoped,"Thirty-second response replay, no semantic cache or distributed request leases."
+C12,crypto-owner,aiegateway/store.py,test_backup_restore_requires_separate_response_key,Only completion replay records are encrypted; audit/state and backup require additional storage protection.
+C13,security-owner,aiegateway/engine.py,test_two_independent_approvals_execute_synthetic_action,Synthetic scheduling only; real downstream service authorization and human UI are not implemented.
+C14,security-owner,aiegateway/store.py,test_approval_replay_denied,Approval handles survive in local state; production revocation of already issued reviewer grants needs design.
+C15,security-owner,aiegateway/adapter.py,test_client_bearer_is_not_forwarded,"Loopback fixture adapter, not an MCP implementation or production provider SDK."
+C16,security-owner,aiegateway/adapter.py,test_arbitrary_network_endpoint_denied,Remote provider transport/TLS/private connectivity are not implemented.
+C17,evidence-owner,aiegateway/store.py,test_audit_alteration_detected,"Local chain cannot prove completeness, trusted time, or administrator-proof integrity."
+C18,privacy-owner,aiegateway/engine.py,test_audit_has_no_prompt_response_or_bearer,"Tenant and subject metadata still need access control, retention and privacy review."
+C19,sre-owner,aiegateway/engine.py,test_timeout_falls_back_only_to_eligible_model,At most two sequential provider attempts; real provider behavior and streaming are untested.
+C20,governance-owner,aiegateway/store.py,test_same_policy_revision_cannot_change_digest,Watermark is local; rollback across disaster recovery requires a separately preserved trusted checkpoint.

@@ -1,0 +1,8 @@
+.git
+.venv
+**/__pycache__
+evidence
+docs
+products
+references
+vendor/wheels/architecture.txt
