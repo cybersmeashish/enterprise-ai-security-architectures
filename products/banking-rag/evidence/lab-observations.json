@@ -1,0 +1,32 @@
+{
+  "valid_cache_hit": true,
+  "revoked_grant_cache_blocked": true,
+  "cache_metrics": {
+    "total": 3,
+    "eligible": 2,
+    "probes": 1,
+    "hits": 1,
+    "expired": 0,
+    "rejected": 0,
+    "hit_rate_total": 0.3333333333333333,
+    "hit_rate_eligible": 0.5
+  },
+  "loop": {
+    "status": "needs_review",
+    "reason": "no_progress_loop",
+    "steps": [
+      {
+        "tool": "lookup",
+        "call_hash": "229b8746ab358c3a3017c195bef57fb96762fc90aa5342ac6e9d57196bbd3395"
+      }
+    ]
+  },
+  "invalid_json_output": {
+    "status": "error",
+    "answer": "",
+    "citations": [],
+    "uncertainty": "Invalid or unsupported response; human review required."
+  },
+  "chunk_count": 4,
+  "scope": "synthetic boundary examples, not identity integration or bank tools"
+}

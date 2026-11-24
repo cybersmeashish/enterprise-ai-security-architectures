@@ -1,0 +1,68 @@
+[
+  {
+    "id": "embedding",
+    "repository": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "files": [
+      {
+        "source_file": "tokenizer.json",
+        "local_file": "tokenizer.json",
+        "bytes": 466247,
+        "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+      },
+      {
+        "source_file": "onnx/model.onnx",
+        "local_file": "model.onnx",
+        "bytes": 90405214,
+        "sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452"
+      },
+      {
+        "source_file": "README.md",
+        "local_file": "README.md",
+        "bytes": 10502,
+        "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+      },
+      {
+        "source_file": "config.json",
+        "local_file": "config.json",
+        "bytes": 612,
+        "sha256": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41"
+      }
+    ],
+    "license_declared": "apache-2.0",
+    "scope": "downloaded artifacts; not provider or multilingual banking validation"
+  },
+  {
+    "id": "reranker",
+    "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "files": [
+      {
+        "source_file": "tokenizer.json",
+        "local_file": "tokenizer.json",
+        "bytes": 711396,
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+      },
+      {
+        "source_file": "onnx/model.onnx",
+        "local_file": "model.onnx",
+        "bytes": 91011230,
+        "sha256": "5d3e70fd0c9ff14b9b5169a51e957b7a9c74897afd0a35ce4bd318150c1d4d4a"
+      },
+      {
+        "source_file": "README.md",
+        "local_file": "README.md",
+        "bytes": 3673,
+        "sha256": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa"
+      },
+      {
+        "source_file": "config.json",
+        "local_file": "config.json",
+        "bytes": 794,
+        "sha256": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc"
+      }
+    ],
+    "license_declared": "apache-2.0",
+    "scope": "downloaded artifacts; not provider or multilingual banking validation"
+  }
+]

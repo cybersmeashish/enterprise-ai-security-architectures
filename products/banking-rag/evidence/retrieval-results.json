@@ -1,0 +1,132 @@
+{
+  "executed_at_utc": "2026-11-24T06:13:08.761557+00:00",
+  "scope": "Synthetic English banking-style texts and author-defined relevance labels; no real bank data, independently adjudicated labels or sealed holdout",
+  "documents": 24,
+  "queries": 18,
+  "methods": {
+    "bm25": {
+      "mrr_at_10": 0.7916666666666666,
+      "recall_at_5": 0.9444444444444444,
+      "ndcg_at_3": 0.806873278571435,
+      "estimated_path_p50_ms": 0.3891460000886582,
+      "estimated_path_p95_ms": 0.6426859003113348
+    },
+    "dense": {
+      "mrr_at_10": 0.9722222222222222,
+      "recall_at_5": 1.0,
+      "ndcg_at_3": 0.9794960974206365,
+      "estimated_path_p50_ms": 4.151922999881208,
+      "estimated_path_p95_ms": 5.958456404914613
+    },
+    "hybrid_rrf": {
+      "mrr_at_10": 0.8796296296296297,
+      "recall_at_5": 1.0,
+      "ndcg_at_3": 0.9107105144841318,
+      "estimated_path_p50_ms": 4.167651499301428,
+      "estimated_path_p95_ms": 5.971777057493454
+    },
+    "hybrid_reranked": {
+      "mrr_at_10": 0.9305555555555556,
+      "recall_at_5": 1.0,
+      "ndcg_at_3": 0.923940541865081,
+      "estimated_path_p50_ms": 81.32070650390233,
+      "estimated_path_p95_ms": 99.35601625111303
+    }
+  },
+  "reranker_delta_vs_hybrid": {
+    "mrr_at_10": 0.05092592592592593,
+    "recall_at_5": 0.0,
+    "ndcg_at_3": 0.01323002738094925
+  },
+  "paired_ndcg_wins_ties_losses": {
+    "wins": 2,
+    "ties": 15,
+    "losses": 1
+  },
+  "model_load_ms": 218.37328800029354,
+  "document_embedding_ms": 191.1027890018886,
+  "models": [
+    {
+      "id": "embedding",
+      "repository": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "files": [
+        {
+          "source_file": "tokenizer.json",
+          "local_file": "tokenizer.json",
+          "bytes": 466247,
+          "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+        },
+        {
+          "source_file": "onnx/model.onnx",
+          "local_file": "model.onnx",
+          "bytes": 90405214,
+          "sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452"
+        },
+        {
+          "source_file": "README.md",
+          "local_file": "README.md",
+          "bytes": 10502,
+          "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+        },
+        {
+          "source_file": "config.json",
+          "local_file": "config.json",
+          "bytes": 612,
+          "sha256": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41"
+        }
+      ],
+      "license_declared": "apache-2.0",
+      "scope": "downloaded artifacts; not provider or multilingual banking validation"
+    },
+    {
+      "id": "reranker",
+      "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "files": [
+        {
+          "source_file": "tokenizer.json",
+          "local_file": "tokenizer.json",
+          "bytes": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        {
+          "source_file": "onnx/model.onnx",
+          "local_file": "model.onnx",
+          "bytes": 91011230,
+          "sha256": "5d3e70fd0c9ff14b9b5169a51e957b7a9c74897afd0a35ce4bd318150c1d4d4a"
+        },
+        {
+          "source_file": "README.md",
+          "local_file": "README.md",
+          "bytes": 3673,
+          "sha256": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa"
+        },
+        {
+          "source_file": "config.json",
+          "local_file": "config.json",
+          "bytes": 794,
+          "sha256": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc"
+        }
+      ],
+      "license_declared": "apache-2.0",
+      "scope": "downloaded artifacts; not provider or multilingual banking validation"
+    }
+  ],
+  "runtime": {
+    "python": "3.12.16",
+    "platform": "Linux-7.2.12-orbstack-00394-gbecdd6130068-aarch64-with-glibc2.41",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "threads": 2
+  },
+  "timing_scope": "one sequential local run after one warm-up; hybrid path uses max(sparse,dense) estimate, not measured concurrent serving; not LLM TTFT or bank SLA",
+  "limitations": [
+    "24 synthetic English texts",
+    "18 author-defined queries and labels",
+    "no independent adjudication or sealed holdout",
+    "no answering LLM",
+    "no Indian-language or scanned-image OCR evaluation",
+    "no actual bank deployment"
+  ]
+}

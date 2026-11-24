@@ -1,0 +1,34 @@
+{
+  "executed_at_utc": "2026-11-24T06:13:08.789992+00:00",
+  "runtime": {
+    "python": "3.12.16",
+    "system": "Linux",
+    "machine": "aarch64",
+    "cpu_quota": "400000 100000",
+    "memory_limit_bytes": "4294967296"
+  },
+  "unique_regression_tests": 40,
+  "support_eval_specification_cases": 30,
+  "support_llm_outcomes_executed": false,
+  "architecture_decisions": 18,
+  "requested_capability_groups": 25,
+  "local_links_checked": 182,
+  "source_manifest_files": 61,
+  "primary_references_content_reviewed": 20,
+  "learned_retrieval_executed": true,
+  "retrieval_documents": 24,
+  "retrieval_queries": 18,
+  "network_isolation": {
+    "probe": "blocked",
+    "errno": 101,
+    "exception": "OSError",
+    "interfaces": [
+      "lo"
+    ],
+    "default_ipv4_route": false,
+    "uid": 1000,
+    "root_read_only": true,
+    "workspace_read_only": true
+  },
+  "scope": "planning/guardrail tests and optional actual synthetic learned-model ranking; no production bank ingestion, support LLM quality, 70% savings or TTFT claim"
+}

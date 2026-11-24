@@ -1,0 +1,164 @@
+[
+  {
+    "id": "ADR-0001",
+    "title": "India-controlled data plane",
+    "owners": "Platform, legal and CISO",
+    "status": "reference_adopted_production_pending",
+    "decision": "Keep originals, derivatives, inference, operators and recovery in approved Indian boundaries, with explicit export routes.",
+    "required_evidence": "Inventory and observe every data/authority exit, support route and restore placement.",
+    "path": "decisions/0001-india-controlled-data-plane.md"
+  },
+  {
+    "id": "ADR-0002",
+    "title": "AI security and independent authority",
+    "owners": "CISO and service owners",
+    "status": "reference_adopted_production_pending",
+    "decision": "The LLM can propose but cannot create grants, approve actions or choose unrestricted tools/recipients.",
+    "required_evidence": "Inject a malicious clause and prove no customer scope, action grant or export recipient changes.",
+    "path": "decisions/0002-ai-security-and-independent-authority.md"
+  },
+  {
+    "id": "ADR-0003",
+    "title": "AI governance and bank accountability",
+    "owners": "Business, AI governance, legal and risk",
+    "status": "reference_adopted_production_pending",
+    "decision": "Approve purpose, dataset rights, risk tier, model limitations and acceptance evidence through named owners before onboarding.",
+    "required_evidence": "Pin entity applicability and commencement; produce reviewed risk/evaluation/change records with unresolved gaps.",
+    "path": "decisions/0003-ai-governance-and-bank-accountability.md"
+  },
+  {
+    "id": "ADR-0004",
+    "title": "RAG security and document permissions",
+    "owners": "Data owner and identity service",
+    "status": "reference_adopted_production_pending",
+    "decision": "Apply trusted grants before sparse/dense candidates and recheck parent expansion, cache, citations and display.",
+    "required_evidence": "Deny cross-case probes, stale epochs, count/score leakage, parent expansion and cached answers after revocation.",
+    "path": "decisions/0004-rag-security-and-document-permissions.md"
+  },
+  {
+    "id": "ADR-0005",
+    "title": "Clause-aware legal chunking",
+    "owners": "Records/legal and retrieval lead",
+    "status": "reference_adopted_production_pending",
+    "decision": "Use structured clause children with authorised parent/definition/exception expansion and page-coordinate citations.",
+    "required_evidence": "Measure gold clause/context recall, amendment precedence, oversized-clause split and original-page hydration.",
+    "path": "decisions/0005-clause-aware-legal-chunking.md"
+  },
+  {
+    "id": "ADR-0006",
+    "title": "Hybrid retrieval with measured reranking",
+    "owners": "Retrieval lead and model-risk",
+    "status": "reference_adopted_production_pending",
+    "decision": "Default the mixed archive to authorised hybrid retrieval; admit a bounded reranker only where paired gains justify cost and tail latency.",
+    "required_evidence": "Compare BM25/dense/RRF/rerank on identical sealed queries; retain every per-query regression and language gap.",
+    "path": "decisions/0006-hybrid-retrieval-with-measured-reranking.md"
+  },
+  {
+    "id": "ADR-0007",
+    "title": "PII before embedding rerank and inference",
+    "owners": "Privacy, records and model-risk",
+    "status": "reference_adopted_production_pending",
+    "decision": "Use restricted extraction plus de-identification before general model paths; keep any OCR-original exception explicit and controlled.",
+    "required_evidence": "Measure detector false negatives by era/script/image; confirm uncertain restricted content cannot bypass admission.",
+    "path": "decisions/0007-pii-before-embedding-rerank-and-inference.md"
+  },
+  {
+    "id": "ADR-0008",
+    "title": "70 percent cost target with quality gates",
+    "owners": "Business, FinOps and model-risk",
+    "status": "reference_adopted_production_pending",
+    "decision": "Optimize complete cost per acceptable answer only after a paired baseline and predefined quality/safety noninferiority gates.",
+    "required_evidence": "Record total cost, paired expert outcomes, adverse strata, abstention and privacy/material failures; independently accept.",
+    "path": "decisions/0008-70-cost-target-with-quality-gates.md"
+  },
+  {
+    "id": "ADR-0009",
+    "title": "Semantic cache with scoped reuse",
+    "owners": "Security, retrieval and SRE",
+    "status": "reference_adopted_production_pending",
+    "decision": "Cache only eligible low-risk answers inside matching subject/case/purpose/permission/corpus/release scope with freshness checks.",
+    "required_evidence": "Track hit/total and hit/eligible; test epoch/release/entity changes, invalidation, expiry and grants on every hit.",
+    "path": "decisions/0009-semantic-cache-with-scoped-reuse.md"
+  },
+  {
+    "id": "ADR-0010",
+    "title": "Risk-based cheap and smart routing",
+    "owners": "Model-risk and business owner",
+    "status": "reference_adopted_production_pending",
+    "decision": "Route from verified task features, sufficient evidence and validated language; deny missing authority and escalate missing evidence.",
+    "required_evidence": "Report cost and material errors by routed group, fallback count, deadline/budget and held-out selection bias.",
+    "path": "decisions/0010-risk-based-cheap-and-smart-routing.md"
+  },
+  {
+    "id": "ADR-0011",
+    "title": "Bounded tools and loop termination",
+    "owners": "Application/service owners and CISO",
+    "status": "reference_adopted_production_pending",
+    "decision": "Use allowlisted schema-validated tools, independent grants, idempotent effects and cumulative step/cost/time budgets.",
+    "required_evidence": "Force same-state loops, transient/permanent failures, timed-out writes, cancellation and denied action proposals.",
+    "path": "decisions/0011-bounded-tools-and-loop-termination.md"
+  },
+  {
+    "id": "ADR-0012",
+    "title": "Long-running memory is evidence not policy",
+    "owners": "Privacy, identity and application owner",
+    "status": "reference_adopted_production_pending",
+    "decision": "Separate session/task facts and durable verified memory; reauthorise and revalidate provenance/expiry on every resume.",
+    "required_evidence": "Revoke a remembered source, restore an old snapshot, change purpose and test deletion/hold handling without leaks.",
+    "path": "decisions/0012-long-running-memory-is-evidence-not-policy.md"
+  },
+  {
+    "id": "ADR-0013",
+    "title": "Schema-valid application JSON",
+    "owners": "Application owner and security",
+    "status": "reference_adopted_production_pending",
+    "decision": "Return only independently validated answer envelopes or controlled error envelopes; separately validate citations and authorization.",
+    "required_evidence": "Reject duplicate keys, non-finite numbers, unknown fields, denied citations, empty evidence and oversized output.",
+    "path": "decisions/0013-schema-valid-application-json.md"
+  },
+  {
+    "id": "ADR-0014",
+    "title": "RAG before archive fine-tuning",
+    "owners": "Records, privacy and model-risk",
+    "status": "reference_adopted_production_pending",
+    "decision": "Keep changing customer facts in versioned authorised retrieval; use prompts for behaviour and consider narrow fine-tuning only for measured task gaps.",
+    "required_evidence": "Compare retrieval/context versus behaviour failures; approve training rights and evaluate a fine-tune only with a defined gap.",
+    "path": "decisions/0014-rag-before-archive-fine-tuning.md"
+  },
+  {
+    "id": "ADR-0015",
+    "title": "Open-model batching KV and quantization",
+    "owners": "Platform and model-risk",
+    "status": "reference_adopted_production_pending",
+    "decision": "Use admitted immutable models and measured batching/KV/quantization settings in approved placement, with online and ingest pools separated.",
+    "required_evidence": "Publish actual hardware/model/engine/workload, latency/quality curves, saturation, cancellation and node-loss behaviour.",
+    "path": "decisions/0015-open-model-batching-kv-and-quantization.md"
+  },
+  {
+    "id": "ADR-0016",
+    "title": "SSE safe output and disconnects",
+    "owners": "Application and SRE",
+    "status": "reference_adopted_production_pending",
+    "decision": "Emit complete JSON events; distinguish progress from first safe answer; cancel or budget background work and reauthorise reconnect replay.",
+    "required_evidence": "Test disconnect, expired cursor, revoked grant, proxy buffering, partial stream and idempotent run creation.",
+    "path": "decisions/0016-sse-safe-output-and-disconnects.md"
+  },
+  {
+    "id": "ADR-0017",
+    "title": "Trace each agent without raw PII",
+    "owners": "Platform, security and privacy",
+    "status": "reference_adopted_production_pending",
+    "decision": "Propagate root task scope/budget and child spans through all model/tool/retrieval/validation stages, storing protected payloads only by exception.",
+    "required_evidence": "Reconstruct an approved synthetic run, nested retries, cancellation and asynchronous links; test trace ACL/redaction.",
+    "path": "decisions/0017-trace-each-agent-without-raw-pii.md"
+  },
+  {
+    "id": "ADR-0018",
+    "title": "Compatible prompt rollback",
+    "owners": "Release owner, model-risk and incident owner",
+    "status": "reference_adopted_production_pending",
+    "decision": "Deploy immutable prompt/model/schema/retrieval manifests behind a controlled alias and roll back to a compatible accepted release without restoring revoked permissions.",
+    "required_evidence": "Canary a failing prompt; switch alias, invalidate caches, terminate/review old runs and measure recovery plus incident remediation.",
+    "path": "decisions/0018-compatible-prompt-rollback.md"
+  }
+]

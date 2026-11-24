@@ -1,0 +1,11 @@
+id,risk,owner,proposed_control,current_evidence_gap
+RISK-01,Cross-customer evidence exposure,CISO and identity,Pre/post retrieval grants; scoped cache and citation checks,Synthetic grant tests only; real integration pending
+RISK-02,Material OCR error in old paper,Records and legal,Original-page review; uncertainty; capture/OCR strata,Real archive unavailable
+RISK-03,Prompt injection changes a tool action,CISO and service,Independent action grant; exact approval; tool allowlist,Bounded plan example only
+RISK-04,PII reaches embedding or reranker,Privacy and model-risk,Restricted extraction; multimodal PII checks; uncertain-case quarantine,Regex demonstration incomplete by design
+RISK-05,Superseded contract becomes current answer,Legal and retrieval,Version/effective-date policy; exception links,Synthetic ranking example only
+RISK-06,Physical capture bottleneck,Records and platform,Capture survey and capacity measured by stratum,Scanner figures assumed
+RISK-07,Cost reduction damages quality,FinOps and model-risk,Complete-cost paired trial with material safety veto,Only hypothetical token-cost calculation
+RISK-08,Restore resurrects revoked documents,SRE and identity,Reconcile permission epochs and tombstones before serving,Restore exercise pending
+RISK-09,Non-compliant supplier/support transfer,Legal and outsourcing,Entity/contract/location/audit/exit evidence,Applicability sign-off pending
+RISK-10,Loop exhausts resources,Application and SRE,State-aware loop detection plus task budget/cancellation,Synthetic plan tests only

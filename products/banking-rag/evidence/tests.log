@@ -1,0 +1,45 @@
+test_another_subject_case_cannot_hit (test_reference.CacheTests.test_another_subject_case_cannot_hit) ... ok
+test_entities_negation_intent_must_match (test_reference.CacheTests.test_entities_negation_intent_must_match) ... ok
+test_epoch_corpus_release_changes_block (test_reference.CacheTests.test_epoch_corpus_release_changes_block) ... ok
+test_expired_and_revoked_block (test_reference.CacheTests.test_expired_and_revoked_block) ... ok
+test_hit_rate_denominators (test_reference.CacheTests.test_hit_rate_denominators) ... ok
+test_nonfinite_similarity_rejected (test_reference.CacheTests.test_nonfinite_similarity_rejected) ... ok
+test_same_scope_valid_hit (test_reference.CacheTests.test_same_scope_valid_hit) ... ok
+test_similarity_is_not_permission (test_reference.CacheTests.test_similarity_is_not_permission) ... ok
+test_unverified_cache_flags_rejected (test_reference.CacheTests.test_unverified_cache_flags_rejected) ... ok
+test_chunk_overlap_bounds (test_reference.ChunkAndPrivacyTests.test_chunk_overlap_bounds) ... ok
+test_clause_provenance_survives_split (test_reference.ChunkAndPrivacyTests.test_clause_provenance_survives_split) ... ok
+test_cross_case_grant_denied (test_reference.ChunkAndPrivacyTests.test_cross_case_grant_denied) ... ok
+test_missing_authority_fields_denied (test_reference.ChunkAndPrivacyTests.test_missing_authority_fields_denied) ... ok
+test_redaction_does_not_claim_completeness (test_reference.ChunkAndPrivacyTests.test_redaction_does_not_claim_completeness) ... ok
+test_synthetic_pii_patterns (test_reference.ChunkAndPrivacyTests.test_synthetic_pii_patterns) ... ok
+test_unverified_revoked_or_old_epoch_denied (test_reference.ChunkAndPrivacyTests.test_unverified_revoked_or_old_epoch_denied) ... ok
+test_answer_without_evidence_rejected (test_reference.JsonTests.test_answer_without_evidence_rejected) ... ok
+test_denial_does_not_disclose_citations (test_reference.JsonTests.test_denial_does_not_disclose_citations) ... ok
+test_invalid_model_text_returns_valid_controlled_error (test_reference.JsonTests.test_invalid_model_text_returns_valid_controlled_error) ... ok
+test_nonfinite_and_wrong_type_rejected (test_reference.JsonTests.test_nonfinite_and_wrong_type_rejected) ... ok
+test_nontext_provider_response_is_controlled (test_reference.JsonTests.test_nontext_provider_response_is_controlled) ... ok
+test_oversized_content_rejected (test_reference.JsonTests.test_oversized_content_rejected) ... ok
+test_unknown_fields_or_duplicate_keys_rejected (test_reference.JsonTests.test_unknown_fields_or_duplicate_keys_rejected) ... ok
+test_unsupported_citation_rejected (test_reference.JsonTests.test_unsupported_citation_rejected) ... ok
+test_valid_answer (test_reference.JsonTests.test_valid_answer) ... ok
+test_capture_schedule_is_separate (test_reference.PlanningTests.test_capture_schedule_is_separate) ... ok
+test_cost_has_no_quality_claim (test_reference.PlanningTests.test_cost_has_no_quality_claim) ... ok
+test_document_page_units (test_reference.PlanningTests.test_document_page_units) ... ok
+test_invalid_cost_fractions (test_reference.PlanningTests.test_invalid_cost_fractions) ... ok
+test_invalid_planning_inputs (test_reference.PlanningTests.test_invalid_planning_inputs) ... ok
+test_page_sensitivity (test_reference.PlanningTests.test_page_sensitivity) ... ok
+test_retry_amplification_changes_workers_not_unique_documents (test_reference.PlanningTests.test_retry_amplification_changes_workers_not_unique_documents) ... ok
+test_storage_units_and_copies (test_reference.PlanningTests.test_storage_units_and_copies) ... ok
+test_canonical_argument_order_detects_repeat (test_reference.RoutingAndAgentTests.test_canonical_argument_order_detects_repeat) ... ok
+test_changed_state_is_not_false_loop (test_reference.RoutingAndAgentTests.test_changed_state_is_not_false_loop) ... ok
+test_loop_stops_same_state_and_arguments (test_reference.RoutingAndAgentTests.test_loop_stops_same_state_and_arguments) ... ok
+test_router_escalates_uncertainty_or_missing_evidence (test_reference.RoutingAndAgentTests.test_router_escalates_uncertainty_or_missing_evidence) ... ok
+test_router_never_escalates_denial (test_reference.RoutingAndAgentTests.test_router_never_escalates_denial) ... ok
+test_router_rejects_model_written_strings (test_reference.RoutingAndAgentTests.test_router_rejects_model_written_strings) ... ok
+test_step_budget_and_tool_allowlist (test_reference.RoutingAndAgentTests.test_step_budget_and_tool_allowlist) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.002s
+
+OK

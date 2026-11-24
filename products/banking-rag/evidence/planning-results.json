@@ -1,0 +1,128 @@
+{
+  "capacity": {
+    "scope": "calculated assumptions, not measured throughput",
+    "documents_per_second": 38.58024691358025,
+    "pages_per_month": 600000000.0,
+    "pages_per_second": 231.4814814814815,
+    "processed_pages_per_second": 243.05555555555557,
+    "ocr_workers_average": 561,
+    "ocr_workers_burst": 1683,
+    "scanner_stations_assumed_schedule": 617,
+    "embedding_tokens_per_month": 283500000000.0,
+    "embedding_tokens_per_second": 109375.0,
+    "chunks_per_month": 800000000.0,
+    "original_images_TB_one_copy": 300.0,
+    "original_images_TB_all_copies": 600.0,
+    "vectors_TB_values_only": 1.2288,
+    "vectors_TB_with_factor_and_copies": 4.17792,
+    "excluded": [
+      "conservation",
+      "handling and QA",
+      "text/sparse index",
+      "metadata",
+      "retained generations",
+      "LLM serving",
+      "staff coverage",
+      "actual performance"
+    ]
+  },
+  "cost": {
+    "baseline_generation_cost": 35.50000000000001,
+    "proposed_generation_cost": 3.675,
+    "generation_saving_fraction": 0.8964788732394366,
+    "rates": "hypothetical fixture currency units per million tokens; not commercial quotes",
+    "quality_verified": false,
+    "excluded_costs": [
+      "OCR",
+      "embedding",
+      "retrieval/rerank",
+      "GPU idle capacity",
+      "cache",
+      "human review",
+      "network"
+    ]
+  },
+  "page_sensitivity": {
+    "1": {
+      "scope": "calculated assumptions, not measured throughput",
+      "documents_per_second": 38.58024691358025,
+      "pages_per_month": 100000000.0,
+      "pages_per_second": 38.58024691358025,
+      "processed_pages_per_second": 40.50925925925926,
+      "ocr_workers_average": 94,
+      "ocr_workers_burst": 281,
+      "scanner_stations_assumed_schedule": 103,
+      "embedding_tokens_per_month": 47250000000.0,
+      "embedding_tokens_per_second": 18229.166666666668,
+      "chunks_per_month": 800000000.0,
+      "original_images_TB_one_copy": 50.0,
+      "original_images_TB_all_copies": 100.0,
+      "vectors_TB_values_only": 1.2288,
+      "vectors_TB_with_factor_and_copies": 4.17792,
+      "excluded": [
+        "conservation",
+        "handling and QA",
+        "text/sparse index",
+        "metadata",
+        "retained generations",
+        "LLM serving",
+        "staff coverage",
+        "actual performance"
+      ]
+    },
+    "6": {
+      "scope": "calculated assumptions, not measured throughput",
+      "documents_per_second": 38.58024691358025,
+      "pages_per_month": 600000000.0,
+      "pages_per_second": 231.4814814814815,
+      "processed_pages_per_second": 243.05555555555557,
+      "ocr_workers_average": 561,
+      "ocr_workers_burst": 1683,
+      "scanner_stations_assumed_schedule": 617,
+      "embedding_tokens_per_month": 283500000000.0,
+      "embedding_tokens_per_second": 109375.0,
+      "chunks_per_month": 800000000.0,
+      "original_images_TB_one_copy": 300.0,
+      "original_images_TB_all_copies": 600.0,
+      "vectors_TB_values_only": 1.2288,
+      "vectors_TB_with_factor_and_copies": 4.17792,
+      "excluded": [
+        "conservation",
+        "handling and QA",
+        "text/sparse index",
+        "metadata",
+        "retained generations",
+        "LLM serving",
+        "staff coverage",
+        "actual performance"
+      ]
+    },
+    "20": {
+      "scope": "calculated assumptions, not measured throughput",
+      "documents_per_second": 38.58024691358025,
+      "pages_per_month": 2000000000.0,
+      "pages_per_second": 771.604938271605,
+      "processed_pages_per_second": 810.1851851851852,
+      "ocr_workers_average": 1870,
+      "ocr_workers_burst": 5609,
+      "scanner_stations_assumed_schedule": 2055,
+      "embedding_tokens_per_month": 945000000000.0,
+      "embedding_tokens_per_second": 364583.3333333333,
+      "chunks_per_month": 800000000.0,
+      "original_images_TB_one_copy": 1000.0,
+      "original_images_TB_all_copies": 2000.0,
+      "vectors_TB_values_only": 1.2288,
+      "vectors_TB_with_factor_and_copies": 4.17792,
+      "excluded": [
+        "conservation",
+        "handling and QA",
+        "text/sparse index",
+        "metadata",
+        "retained generations",
+        "LLM serving",
+        "staff coverage",
+        "actual performance"
+      ]
+    }
+  }
+}

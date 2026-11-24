@@ -1,0 +1,31 @@
+{
+  "doc_id": "SYN-CONTRACT-001",
+  "version": "1",
+  "scope": "synthetic-case-A",
+  "clauses": [
+    {
+      "path": "4.1 Termination",
+      "parent_id": "section-4",
+      "pages": [
+        3
+      ],
+      "references": [
+        "4.2",
+        "Definitions:BusinessDay"
+      ],
+      "text": "Either party may terminate with thirty business days written notice. The cure period in clause 4.2 must be considered."
+    },
+    {
+      "path": "4.2 Cure period",
+      "parent_id": "section-4",
+      "pages": [
+        3,
+        4
+      ],
+      "references": [
+        "4.1"
+      ],
+      "text": "A material breach allows a fifteen business day cure period following written notice. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. The notice date and exceptions remain part of the same clause. "
+    }
+  ]
+}

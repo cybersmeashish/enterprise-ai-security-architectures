@@ -1,0 +1,229 @@
+{
+  "scope": "Synthetic English banking-style texts and author-defined relevance labels; no real bank data, independently adjudicated labels or sealed holdout",
+  "documents": [
+    {
+      "id": "notice-current",
+      "text": "SYN contract amendment effective 2026. Clause 8.1: ending the archive supplier agreement requires forty-five business days written notice. This amendment replaces the thirty-day historical notice clause. The material-breach cure exception remains separate."
+    },
+    {
+      "id": "notice-old",
+      "text": "SYN historical supplier agreement effective 1984, superseded. Clause 8.1 required thirty calendar days notice for ordinary termination. It is retained as historical evidence and does not state the current notice period."
+    },
+    {
+      "id": "breach-cure",
+      "text": "SYN supplier contract clause 8.2: after a written notice of material breach, the supplier has fifteen business days to remedy the breach. Termination for breach must consider this cure period and the recorded exception."
+    },
+    {
+      "id": "loan-cure",
+      "text": "SYN loan document: a borrower receives thirty days to pay an overdue instalment following a demand. This is a borrower repayment process, not the archive supplier material-breach cure clause."
+    },
+    {
+      "id": "receipt-exact",
+      "text": "SYN archived receipt RCPT-1907-A, folio 41: seventy-five rupees received by cheque. The page shows the receipt identifier and amount; this receipt does not establish the current account balance."
+    },
+    {
+      "id": "receipt-missing",
+      "text": "SYN records procedure: if a physical receipt is missing, open a custody review ticket and search approved secondary records. Do not invent its amount or treat absence as proof of payment."
+    },
+    {
+      "id": "duplicate-refund",
+      "text": "SYN duplicate receipt procedure: duplicate scans do not create a second payment. Refund requests need independent payment-ledger reconciliation and approved review; the archive assistant cannot issue a refund."
+    },
+    {
+      "id": "ocr-ambiguity",
+      "text": "SYN OCR review: if a decimal point or currency value is unclear in a faded receipt, flag the amount as uncertain and ask a records reviewer to inspect the original crop. Never guess a financially material amount."
+    },
+    {
+      "id": "kyc-authority",
+      "text": "SYN support policy: the assistant may locate authorised KYC evidence, but cannot change a customer identity record. KYC changes require the bank identity workflow and independent employee authority."
+    },
+    {
+      "id": "access-boundary",
+      "text": "SYN access policy: staff can retrieve only documents bound to their verified customer case and approved purpose. A similar question does not permit another customer's record, cached answer, source IDs or snippets."
+    },
+    {
+      "id": "cache-eligible",
+      "text": "SYN cache policy: generic low-risk procedural answers may be reused only with current grants, matching corpus and release, and valid citations. Live balances, customer entitlements and material legal advice bypass the answer cache."
+    },
+    {
+      "id": "retention-hold",
+      "text": "SYN records policy: a legal hold suspends normal deletion for its defined record scope. Records owners and legal staff resolve the hold and derived-index access; archive age alone does not determine a retention period."
+    },
+    {
+      "id": "pii-vault",
+      "text": "SYN privacy design: replace restricted customer identifiers with stable case-scoped pseudonyms before embedding, reranking or general LLM inference. Re-identification maps remain in a separately authorised bank vault."
+    },
+    {
+      "id": "india-boundary",
+      "text": "SYN placement design: original scans, OCR, indexes, inference and backups stay in approved Indian locations. An offshore support export requires a separately approved disclosure route and is not allowed merely because compute is in India."
+    },
+    {
+      "id": "escrow-approval",
+      "text": "SYN escrow clause: release of escrowed funds needs two independently authorised approvers bound to the exact recipient and amount. A model summary or retrieved clause cannot itself authorise a payment."
+    },
+    {
+      "id": "deposit-penalty",
+      "text": "SYN term-deposit contract: early closure deducts one percentage point from the applicable interest rate, subject to the agreement's listed exceptions. This is synthetic example wording and not a real bank tariff."
+    },
+    {
+      "id": "locker-nominee",
+      "text": "SYN locker clause: nominee access follows the agreement's documented succession evidence and branch verification procedure. The assistant cannot infer authority solely from a name appearing in an old register."
+    },
+    {
+      "id": "chargeback",
+      "text": "SYN card support rule: a disputed transaction is submitted for review within ninety days of the transaction date. Opening a dispute is not an automatic reversal or refund."
+    },
+    {
+      "id": "loan-rate",
+      "text": "SYN loan policy: retrieve the signed agreement and effective amendment for the specific loan before answering about interest. A bank-wide example rate does not prove an individual customer's current rate."
+    },
+    {
+      "id": "witness-missing",
+      "text": "SYN legal review procedure: a missing witness signature or incomplete contract page is escalated for qualified legal review. The assistant may explain the missing evidence but cannot declare legal validity."
+    },
+    {
+      "id": "export-recipient",
+      "text": "SYN evidence export procedure: verify approved recipient, purpose, fields and custody record before disclosure. A user-supplied email address does not create an export grant."
+    },
+    {
+      "id": "current-policy",
+      "text": "SYN product policy: support answers about current fees use the currently approved tariff and effective date. A century-old receipt or superseded brochure is historical evidence, not the current policy authority."
+    },
+    {
+      "id": "run-cancel",
+      "text": "SYN chat operation: disconnect cancels the run and releases resources unless authorised bounded background continuation is configured. Reconnection rechecks identity and grants before replaying any answer."
+    },
+    {
+      "id": "renewal",
+      "text": "SYN supplier renewal clause: the archive services agreement does not renew automatically. A renewal needs written bank approval before expiry; continued document processing does not establish approval."
+    }
+  ],
+  "queries": [
+    {
+      "id": "q01",
+      "text": "What notice is required now to end the archive supplier agreement?",
+      "relevance": {
+        "notice-current": 2
+      }
+    },
+    {
+      "id": "q02",
+      "text": "How long can the archive vendor take to fix a serious contractual breach?",
+      "relevance": {
+        "breach-cure": 2
+      }
+    },
+    {
+      "id": "q03",
+      "text": "What sum is recorded on receipt RCPT-1907-A?",
+      "relevance": {
+        "receipt-exact": 2
+      }
+    },
+    {
+      "id": "q04",
+      "text": "The receipt cannot be found. Should support assume the customer already paid?",
+      "relevance": {
+        "receipt-missing": 2
+      }
+    },
+    {
+      "id": "q05",
+      "text": "Two images of the same receipt exist. Can we refund a duplicate payment automatically?",
+      "relevance": {
+        "duplicate-refund": 2
+      }
+    },
+    {
+      "id": "q06",
+      "text": "A faded voucher has an unreadable decimal. How should the amount be handled?",
+      "relevance": {
+        "ocr-ambiguity": 2
+      }
+    },
+    {
+      "id": "q07",
+      "text": "Can this assistant edit a customer identity record after locating KYC papers?",
+      "relevance": {
+        "kyc-authority": 2
+      }
+    },
+    {
+      "id": "q08",
+      "text": "May a staff member see a different customer's answer just because the question is similar?",
+      "relevance": {
+        "access-boundary": 2
+      }
+    },
+    {
+      "id": "q09",
+      "text": "Which answers are safe candidates for reuse rather than another inference call?",
+      "relevance": {
+        "cache-eligible": 2
+      }
+    },
+    {
+      "id": "q10",
+      "text": "What happens to planned record deletion when litigation preservation applies?",
+      "relevance": {
+        "retention-hold": 2
+      }
+    },
+    {
+      "id": "q11",
+      "text": "How can identifiers stay consistent while being concealed from all the text models?",
+      "relevance": {
+        "pii-vault": 2
+      }
+    },
+    {
+      "id": "q12",
+      "text": "Does hosting in India automatically allow sending records to offshore support?",
+      "relevance": {
+        "india-boundary": 2
+      }
+    },
+    {
+      "id": "q13",
+      "text": "Who must agree before money held in escrow can be released?",
+      "relevance": {
+        "escrow-approval": 2
+      }
+    },
+    {
+      "id": "q14",
+      "text": "What consequence follows early closure of the example term deposit?",
+      "relevance": {
+        "deposit-penalty": 2
+      }
+    },
+    {
+      "id": "q15",
+      "text": "When should the customer submit the example card transaction dispute?",
+      "relevance": {
+        "chargeback": 2
+      }
+    },
+    {
+      "id": "q16",
+      "text": "Can an old brochure establish today's fee?",
+      "relevance": {
+        "current-policy": 2
+      }
+    },
+    {
+      "id": "q17",
+      "text": "What should occur if a chat connection drops and then reconnects?",
+      "relevance": {
+        "run-cancel": 2
+      }
+    },
+    {
+      "id": "q18",
+      "text": "Will the archive services contract extend by itself after expiry?",
+      "relevance": {
+        "renewal": 2
+      }
+    }
+  ]
+}

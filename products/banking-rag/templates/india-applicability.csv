@@ -1,0 +1,8 @@
+id,reference,applicability_question,design_implication,verification_status
+RBI-IT,RBI IT Governance Risk Controls Assurance 2023,Confirm bank class and current amendments,Oversight segregation change assurance continuity,Official direction retrieved; implementation evidence pending
+RBI-OUTSOURCE,RBI IT Outsourcing 2023,Confirm supplier activity and entity scope,Due diligence retained accountability audit access exit concentration,Official direction retrieved; supplier contract review pending
+DPDP,DPDP Act rules and commencement notifications,Verify current provisions in force and processing purposes,Data rights lifecycle notice transfer and accountability as applicable,Primary complete/commencement review unresolved; no compliance assertion
+CERTIN,CERT-In 70B directions,Confirm entity/system/reporting/log scope and current directions,Incident evidence reporting and approved log retention,Primary 2022 PDF retrieved; applicability and amendments pending
+PAYMENT,RBI Storage of Payment System Data 2018,Confirm whether payment-system data is actually in this use case,Applicable payment-specific storage boundary,Official page retrieved; not blanket bank-document localisation
+RECORDS,Record retention and legal holds,Classify record categories and separate original/derived stores,Preservation deletion access and holds,Legal records schedule pending
+OTHER,Other binding bank cyber/model-risk and sector directions,Legal owner to identify current instruments,Use-case-specific controls and supervisor expectations,No claim of exhaustive regulatory inventory

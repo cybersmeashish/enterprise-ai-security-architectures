@@ -1,0 +1,21 @@
+{
+  "requests": 1000,
+  "cache_hit_fraction": 0.25,
+  "cheap_fraction_of_misses": 0.8,
+  "baseline_tokens": {
+    "input": 5000,
+    "output": 700
+  },
+  "proposed_tokens": {
+    "input": 2000,
+    "output": 500
+  },
+  "smart_rates": {
+    "input": 5,
+    "output": 15
+  },
+  "cheap_rates": {
+    "input": 0.5,
+    "output": 1.5
+  }
+}
